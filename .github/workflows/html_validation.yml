@@ -25,15 +25,9 @@ jobs:
         sudo apt update
         sudo apt install unzip
         
-    # - name: Download Nu HTML Validator
-    #   run: |
-    #     curl -L -o vnu.jar https://github.com/validator/validator/releases/download/latest/vnu.jar
-    
-    - name: Download Nu HTML Validator (v20.6.30)
+    - name: Download Nu HTML Validator
       run: |
-          curl -L https://github.com/validator/validator/releases/download/20.6.30/vnu.jar_20.6.30.zip
-          unzip vnu.jar_20.6.30.zip
-          mv dist/vnu.jar vnu.jar
+        curl -L -o vnu.jar https://github.com/validator/validator/releases/download/latest/vnu.jar
 
     - name: Validate HTML files
       run: |
