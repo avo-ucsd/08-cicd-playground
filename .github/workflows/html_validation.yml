@@ -1,0 +1,26 @@
+name: HTML Validation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate-html:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'  # Nu validator supports 8+, 17 is stable.
+
+    - name: Download Nu HTML Validator
+      run: curl -L -o vnu.jar https://github.com/validator/validator/releases/latest/download/vnu.jar
+
+    - name: Validate HTML
+      run: java -jar vnu.jar --errors-only ./   # where ./ is the path to the HTML files.
