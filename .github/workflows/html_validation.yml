@@ -7,7 +7,7 @@ on:
       - 'README.md'
 
 jobs:
-  validate-html:
+  nu-validator:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,7 +24,12 @@ jobs:
       run: |
         curl -L -o vnu.jar https://github.com/validator/validator/releases/download/latest/vnu.jar
 
-    - name: Validate HTML files
+    - name: Validate HTML
       run: |
         echo "Validating HTML..."
-        java -jar vnu.jar --errors-only src/
+        java -jar vnu.jar --errors-only --skip-non-html --html src/
+
+    - name: Validate CSS
+      run: |
+        echo "Validating CSS..."
+        java -jar vnu.jar --errors-only --skip-non-css --css src/
