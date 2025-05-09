@@ -20,12 +20,7 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Get unzip
-      run: | 
-        sudo apt update
-        sudo apt install unzip
-        
-    - name: Download Nu HTML Validator
+    - name: Download Nu HTML Validator (latest version)
       run: |
         curl -L -o vnu.jar https://github.com/validator/validator/releases/download/latest/vnu.jar
 
