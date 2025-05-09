@@ -5,7 +5,6 @@ on:
     branches: ["*"]
     paths-ignore:
       - 'README.md'
-      - '.github/**'
 
 jobs:
   validate-html:
@@ -32,11 +31,11 @@ jobs:
     
     - name: Download Nu HTML Validator (v20.6.30)
       run: |
-          curl https://github.com/validator/validator/releases/download/20.6.30/vnu.jar_20.6.30.zip
+          curl -L https://github.com/validator/validator/releases/download/20.6.30/vnu.jar_20.6.30.zip
           unzip vnu.jar_20.6.30.zip
           mv dist/vnu.jar vnu.jar
 
     - name: Validate HTML files
       run: |
         echo "Validating HTML..."
-        java -jar vnu.jar --errors-only ./
+        java -jar vnu.jar --errors-only src/
