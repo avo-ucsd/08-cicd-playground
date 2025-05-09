@@ -4,11 +4,12 @@ body {
 }
 
 h1 {
-    font-weight: bold
+    font-weight bold
     background: #f0f0f0; /* Missing semicolon above */
 }
 
 .invalid-syntax {
-    margin: 10px
-    padding: 5px
+    margin 10px;
+    padding 5px;
     border: 1px solid black;
+}
