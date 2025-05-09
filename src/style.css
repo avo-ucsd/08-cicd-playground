@@ -1,14 +1,15 @@
 body {
     color: blue;
-    font-size 16px /* Missing colon */
+    font-size: 16px;
 }
 
 h1 {
-    font-weight: bold
-    background: #f0f0f0; /* Missing semicolon above */
+    font-weight: bold;
+    background: #f0f0f0;
 }
 
 .invalid-syntax {
-    margin: 10px
-    padding: 5px
+    margin: 10px;
+    padding: 5px;
     border: 1px solid black;
+}
