@@ -32,4 +32,4 @@ jobs:
           echo "No CSS files found. Skipping validation."
           exit 0
         fi
-        java -jar vnu.jar --verbose --no-langdetect --Werror $CSS_FILES
+        java -jar vnu.jar --verbose --no-langdetect --Werror --css $CSS_FILES
